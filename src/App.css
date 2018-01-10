@@ -209,7 +209,7 @@ header {
       display: inline-block;
       padding: 0 10px; }
       .headOptions .fR ul li:first-child {
-        padding-right: 15px; }
+        padding-right: 20px; }
       .headOptions .fR ul li a i {
         color: #b7b8bb;
         font-size: 22px;
@@ -218,7 +218,7 @@ header {
         color: #255af4; }
 
 .sidebar {
-  background-color: #255af4;
+  background: linear-gradient(to bottom, #2559f4 0%, #5d62f1 100%);
   bottom: 0;
   height: calc(100% - 150px);
   left: 0;
@@ -247,9 +247,12 @@ header {
 .dashBoard {
   padding: 30px 0 30px 120px; }
 
-.coinBox, .dashBoard, .shortGraph {
+.graphArea {
+  padding: 30px 30px 30px 120px; }
+
+.coinBox, .dashBoard, .shortGraph, .twowaySide {
   display: flex; }
-  .coinBox > div, .dashBoard > div, .shortGraph > div {
+  .coinBox > div, .dashBoard > div, .shortGraph > div, .twowaySide > div {
     width: 50%; }
 
 .coinShow {
@@ -361,14 +364,93 @@ header {
         .numberUp > div > span small.red {
           color: #f78e89; }
 
-.headAct h4 {
-  display: inline-block; }
+.headAct {
+  display: flex;
+  padding-bottom: 30px; }
+  .headAct > div {
+    width: 50%; }
+    .headAct > div:first-child h4 {
+      display: inline-block; }
+    .headAct > div:first-child ul {
+      display: inline-block;
+      padding-left: 10px; }
+      .headAct > div:first-child ul li {
+        display: inline-block;
+        padding: 0 10px; }
+        .headAct > div:first-child ul li a {
+          color: #bbbdbf;
+          display: inline-block;
+          transition: all 0.3s linear; }
+          .headAct > div:first-child ul li a:hover {
+            color: #255af4; }
+    .headAct > div:last-child {
+      padding-right: 50px;
+      text-align: right; }
+      .headAct > div:last-child ul li {
+        color: #bbbdbf;
+        display: inline-block;
+        padding: 0 10px; }
+        .headAct > div:last-child ul li.actNumber {
+          position: relative;
+          top: -2px; }
+          .headAct > div:last-child ul li.actNumber.activeSlider {
+            color: #313132; }
+        .headAct > div:last-child ul li span {
+          color: #bbbdbf;
+          cursor: pointer;
+          display: inline-block;
+          transition: all 0.3s linear; }
+          .headAct > div:last-child ul li span:hover {
+            color: #255af4; }
 
-.headAct ul {
-  display: inline-block;
-  padding-left: 10px; }
-  .headAct ul li {
+.boxCoin {
+  background-color: #345bf3;
+  background: linear-gradient(45deg, #2151ed 0%, #6b72f7 100%);
+  border-radius: 10px;
+  box-shadow: 10px 10px 6px -1px rgba(0, 0, 0, 0.2);
+  padding: 35px; }
+  .boxCoin h3, .boxCoin span, .boxCoin strong, .boxCoin small {
+    color: #FFF; }
+  .boxCoin span {
+    display: block;
+    font-size: 18px;
+    padding-bottom: 15px; }
+    .boxCoin span i {
+      font-size: 8px;
+      padding-left: 3px; }
+
+.slick-slider .slick-list {
+  padding-left: 0 !important;
+  padding-right: 200px !important; }
+  .slick-slider .slick-list .slick-track {
+    padding-bottom: 15px; }
+  .slick-slider .slick-list .slick-slide {
+    transform: scale(0);
+    transition: all 0.3s linear; }
+    .slick-slider .slick-list .slick-slide.slick-active {
+      transform: scale(0.7);
+      transform: scale(0.7); }
+      .slick-slider .slick-list .slick-slide.slick-active.slick-center {
+        transform: scale(1); }
+
+.sliderArr {
+  font-size: 30px; }
+
+.graphHead {
+  padding-bottom: 25px; }
+  .graphHead h5 span {
     display: inline-block;
-    padding: 0 10px; }
-    .headAct ul li a {
-      color: #bbbdbf; }
+    position: relative;
+    padding-left: 30px;
+    font-size: 12px; }
+    .graphHead h5 span:before {
+      background-color: transparent;
+      border: 3px solid #255af4;
+      border-radius: 100%;
+      content: '';
+      height: 9px;
+      left: 10px;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      width: 9px; }
