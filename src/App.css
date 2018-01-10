@@ -1,0 +1,374 @@
+@import url(~slick-carousel/slick/slick.css);
+.transitionRegular, a {
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+
+.appear, input[type="text"], input[type="password"], textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none; }
+
+.backface {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+/* Common css */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.center-block {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  padding-right: 0px; }
+
+.row .center-block {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  -webkit-tap-highlight-color: transparent; }
+
+.fL {
+  float: left; }
+
+.fR {
+  float: right; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+.text-uppercase {
+  text-transform: uppercase; }
+
+a, a:focus, input:focus, textarea:focus, select:focus {
+  outline: none;
+  text-decoration: none; }
+
+img {
+  max-width: 100%;
+  vertical-align: middle; }
+
+figure {
+  margin: 0; }
+
+dl, dt, dd {
+  margin: 0; }
+
+blockquote, ul, li, ol, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+textarea {
+  resize: none; }
+
+input[type="text"], input[type="password"], textarea {
+  border-radius: 0; }
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 1240px; }
+
+/* Basic setup #bdbdbd */
+html {
+  background-color: #f7f8fb; }
+
+body {
+  background-color: #f7f8fb;
+  color: #333;
+  font: 400 16px/26px "Roboto", sans-serif; }
+
+.coverBG {
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .coverBG.topCover {
+    background-position: center top; }
+
+h1 {
+  color: #313132;
+  font: 700 30px/44px "Montserrat", sans-serif;
+  padding-bottom: 20px; }
+
+h2 {
+  color: #313132;
+  font: 700 26px/36px "Montserrat", sans-serif;
+  padding-bottom: 20px; }
+
+h3 {
+  color: #313132;
+  font: 700 22px/30px "Montserrat", sans-serif;
+  padding-bottom: 15px; }
+
+h4 {
+  color: #313132;
+  font: 700 20px/26px "Montserrat", sans-serif;
+  padding-bottom: 15px; }
+
+h5 {
+  color: #313132;
+  font: 700 18px/24px "Montserrat", sans-serif;
+  padding-bottom: 15px; }
+
+h6 {
+  color: #313132;
+  font: 700 16px/20px "Montserrat", sans-serif;
+  padding-bottom: 10px; }
+
+p {
+  padding-bottom: 25px; }
+
+a {
+  color: #333; }
+
+::-moz-selection {
+  color: #FFF;
+  background: #255af4; }
+
+::selection {
+  color: #FFF;
+  background: #255af4; }
+
+/* Dashboard */
+header {
+  padding-left: 70px;
+  position: relative; }
+  header .faceUser {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 70px; }
+    header .faceUser span {
+      background-color: #255af4;
+      bottom: 0;
+      color: #FFF;
+      display: inline-block;
+      min-width: 30px;
+      min-height: 30px;
+      padding: 2px 5px;
+      position: absolute;
+      right: 0;
+      text-align: center; }
+
+.headOptions {
+  padding: 16px 50px 16px 50px; }
+  .headOptions .fL > div {
+    display: inline-block;
+    padding-right: 25px;
+    position: relative; }
+    .headOptions .fL > div:before {
+      background-color: #ccced2;
+      content: '';
+      height: 70px;
+      position: absolute;
+      right: 0;
+      top: -16px;
+      width: 1px; }
+  .headOptions .fL a {
+    color: #c8c9cc;
+    display: inline-block;
+    font-size: 36px; }
+    .headOptions .fL a:hover {
+      color: #255af4; }
+  .headOptions .fL span {
+    color: #b2b3b7;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 500;
+    padding-left: 25px;
+    position: relative;
+    top: -5px; }
+  .headOptions .fR ul {
+    padding-top: 7px; }
+    .headOptions .fR ul li {
+      display: inline-block;
+      padding: 0 10px; }
+      .headOptions .fR ul li:first-child {
+        padding-right: 15px; }
+      .headOptions .fR ul li a i {
+        color: #b7b8bb;
+        font-size: 22px;
+        transition: all 0.3s linear; }
+      .headOptions .fR ul li a.active i, .headOptions .fR ul li a:hover i {
+        color: #255af4; }
+
+.sidebar {
+  background-color: #255af4;
+  bottom: 0;
+  height: calc(100% - 150px);
+  left: 0;
+  position: fixed;
+  width: 70px; }
+  .sidebar ul li:last-child {
+    bottom: 0;
+    position: absolute;
+    width: 100%; }
+  .sidebar ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    line-height: 68px;
+    font-size: 18px;
+    height: 70px;
+    text-align: center; }
+    .sidebar ul li a:hover {
+      background-color: #FFF;
+      color: #255af4; }
+      .sidebar ul li a:hover i {
+        transform: scale(1.2); }
+    .sidebar ul li a i {
+      transform: scale(1);
+      transition: all 0.3s linear; }
+
+.dashBoard {
+  padding: 30px 0 30px 120px; }
+
+.coinBox, .dashBoard, .shortGraph {
+  display: flex; }
+  .coinBox > div, .dashBoard > div, .shortGraph > div {
+    width: 50%; }
+
+.coinShow {
+  padding-bottom: 35px; }
+  .coinShow > div {
+    font-size: 32px;
+    line-height: 34px; }
+    .coinShow > div small {
+      font-size: 14px;
+      padding-right: 15px;
+      text-transform: uppercase; }
+  .coinShow > span {
+    display: block;
+    font-size: 16px;
+    padding-top: 5px; }
+    .coinShow > span small {
+      color: #7ed393;
+      font-size: 16px;
+      padding-left: 10px; }
+
+.orderSellbuy ul {
+  margin: 0 -15px; }
+  .orderSellbuy ul li {
+    display: inline-block;
+    padding: 0 15px; }
+    .orderSellbuy ul li a {
+      background-color: #FFF;
+      color: #255af4;
+      display: block;
+      padding: 7px 10px;
+      min-width: 65px;
+      transition: all 0.3s linear; }
+      .orderSellbuy ul li a span {
+        display: block;
+        padding-top: 2px; }
+      .orderSellbuy ul li a:hover {
+        background-color: #255af4;
+        color: #FFF; }
+
+.shortGraph .headReven {
+  color: #9b9c9f;
+  display: block; }
+
+.shortGraph .priceUp {
+  color: #313132;
+  font-size: 32px;
+  line-height: 36px;
+  padding-top: 10px; }
+  .shortGraph .priceUp small {
+    font-size: 20px;
+    padding-right: 10px;
+    line-height: 36px; }
+
+.chartBtn {
+  background-color: #FFF;
+  bottom: 0;
+  color: #255af4;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 22px;
+  padding: 31px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  transition: all 0.3s linear; }
+  .chartBtn:hover {
+    background-color: #255af4;
+    color: #FFF; }
+
+.bottomNum.active .numberUp {
+  transform: scaleX(1); }
+  .bottomNum.active .numberUp > div > span, .bottomNum.active .numberUp > div > small {
+    opacity: 1;
+    transform: translateY(0); }
+
+.numberUp {
+  background-color: #FFF;
+  bottom: 0;
+  display: flex;
+  padding: 4px 15px 0;
+  position: absolute;
+  right: 87px;
+  width: 80vw;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 0.35s linear; }
+  .numberUp > div {
+    padding: 10px 15px;
+    width: 20%; }
+    .numberUp > div > small {
+      display: block;
+      font-size: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s linear 0.7s;
+      text-transform: uppercase; }
+    .numberUp > div > span {
+      display: block;
+      font-size: 26px;
+      line-height: 34px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s linear 0.7s; }
+      .numberUp > div > span small {
+        font-size: 14px;
+        padding-left: 5px; }
+        .numberUp > div > span small.green {
+          color: #7ed393; }
+        .numberUp > div > span small.red {
+          color: #f78e89; }
+
+.headAct h4 {
+  display: inline-block; }
+
+.headAct ul {
+  display: inline-block;
+  padding-left: 10px; }
+  .headAct ul li {
+    display: inline-block;
+    padding: 0 10px; }
+    .headAct ul li a {
+      color: #bbbdbf; }

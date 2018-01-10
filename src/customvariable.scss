@@ -1,0 +1,25 @@
+$white: #FFF;
+$black: #000;
+$white: #FFF;
+$bgcolor: #f7f8fb;
+$blue: #255af4;
+$bgrey: #313132;
+$mont: 'Montserrat', sans-serif;
+$rob: 'Roboto', sans-serif;
+$awe: 'FontAwesome';
+.transitionRegular {
+	-webkit-transition:all 0.3s linear;
+	-moz-transition:all 0.3s linear;
+	transition:all 0.3s linear;
+}
+.appear {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+}
+.backface {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+} 
