@@ -185,7 +185,7 @@ header { padding-left: 70px; position: relative;
     }
   }
 }
-.boxCoin { background-color: #345bf3; background: linear-gradient(45deg, rgba(33,81,237,1) 0%, rgb(126, 132, 251,1) 100%); border-radius: 10px; box-shadow: 10px 10px 6px -1px rgba(0,0,0,0.2); padding: 35px;
+.boxCoin { background-color: #345bf3; background: linear-gradient(45deg, rgba(33,81,237,1) 0%, rgba(126, 132, 251,1) 100%); border-radius: 10px; box-shadow: 10px 10px 6px -1px rgba(0,0,0,0.2); padding: 35px;
   h3, span, strong, small { color: $white; }
   span { display: block; font-size: 18px; padding-bottom: 15px; 
     i { font-size: 8px; padding-left: 3px; }
