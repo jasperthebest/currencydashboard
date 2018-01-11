@@ -1,6 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
-
+/* eslint-disable */
 class Bottomnumber extends React.Component {
 	constructor(props) {
 		super(props);

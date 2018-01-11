@@ -1,5 +1,5 @@
 import React from 'react';
-
+/* eslint-disable */
 class Sidebar extends React.Component {
 	render() {
 		return(

@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import CountUp from 'react-countup';
 import {Line} from 'react-chartjs-2';
-
+/* eslint-disable */
 const data = [{
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   datasets: [
@@ -66,7 +66,6 @@ let annotation = {
     }],
     drawTime: "afterDraw"
 };
-
 let options = {
   maintainAspectRatio: true,
   annotation: annotation,
