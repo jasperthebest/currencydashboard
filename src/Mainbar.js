@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import CountUp from 'react-countup';
 import {Line} from 'react-chartjs-2';
 
-const data1 = {
+const data = [{
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   datasets: [
     {
@@ -28,8 +28,8 @@ const data1 = {
       data: [65, 55, 79, 75, 73, 76, 69, 67, 61, 58, 65, 71]
     }
   ]
-};
-const data2 = {
+},
+{
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   datasets: [
     {
@@ -51,11 +51,10 @@ const data2 = {
       pointHoverBorderWidth: 1,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [65, 55, 79, 75, 73, 76, 69, 67, 61, 58, 65, 71]
+      data: [85, 55, 69, 55, 73, 86, 69, 77, 51, 58, 75, 70]
     }
   ]
-};
-
+}];
 let annotation = {
     annotations: [{
         type: 'line',
@@ -154,14 +153,13 @@ class Mainbar extends React.Component {
 			return(<div key={index}>
 			<span className="headReven">{sht.name}</span>
 			<span className="priceUp"><small>+$</small><CountUp className="CountUp" start={0} end={sht.price} duration={3} redraw={true} /></span>
-			<Line data={data1} height={30} options={options} ref='chart' />
+			<Line data={data[index]} height={30} options={options} ref='chart' />
 			</div>);
 		});
 		const operation = [{name: "Sell", icon: "arrow-up"}, {name: "Buy", icon: "arrow-down"}, { name: "Order", icon: "newspaper-o"}];
 		const operationhtml = operation.map((opert, index) => {
 			return <li key={index}><a href="#"><i className={"fa fa-" + opert.icon} aria-hidden="true"></i><span>{opert.name}</span></a></li>;
 		});
-
 		return (
 			<div className="dashBoard">
 			<div>
