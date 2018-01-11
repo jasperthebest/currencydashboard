@@ -51,16 +51,16 @@ let options = {
         display:false,
         text:'Chart.js Line Chart'
       },
-      tooltips: {
+  tooltips: {
         mode: 'index',
         intersect: false,
       },
-      hover: {
+  hover: {
         mode: 'nearest',
         intersect: true
       },
-      scales: {
-          xAxes: [{
+  scales: {
+      xAxes: [{
               display: true,
               gridLines: {
                     display: false,
@@ -70,7 +70,7 @@ let options = {
                   labelString: 'Month'
               }
           }],
-          yAxes: [{
+      yAxes: [{
               display: true,
               gridLines: {
                 drawBorder: false,
@@ -84,19 +84,20 @@ let options = {
 };
 
 class Linechart extends Component {
-  componentDidMount() {
-    this.refs.chart.chart_instance.canvas.addEventListener("mousemove", this.crossHair.bind(this));
-  }
-  crossHair(e) {
-      const myChartConfig = this.refs.chart.chart_instance
-      const points = myChartConfig.getElementsAtXAxis(e);
-      annotation.annotations[0].value = myChartConfig.config.data.labels[points[0]._index];
-      myChartConfig.update();
-  }
   render() {
     return (<div className="graphArea">
+      <div className="graphToparea">
       <div className="graphHead">
       <h5>Ethereum Charts <span>ETH/USD</span></h5>
+      </div>
+      <div className="graphSide text-right">
+      <ul>
+      <li>Year</li>
+      <li className="active">Month</li>
+      <li>Week</li>
+      <li>Day</li>
+      </ul>
+      </div>
       </div>
       <Line data={data} height={50} options={options} ref='chart' />
     </div>);

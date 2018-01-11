@@ -95,7 +95,7 @@ input[type="text"], input[type="password"], textarea {
   padding: 0 15px;
   width: 1240px; }
 
-/* Basic setup #bdbdbd */
+/* Basic setup */
 html {
   background-color: #f7f8fb; }
 
@@ -250,10 +250,16 @@ header {
 .graphArea {
   padding: 30px 30px 30px 120px; }
 
-.coinBox, .dashBoard, .shortGraph, .twowaySide {
+.coinBox, .dashBoard, .shortGraph, .twowaySide, .graphToparea {
   display: flex; }
-  .coinBox > div, .dashBoard > div, .shortGraph > div, .twowaySide > div {
+  .coinBox > div, .dashBoard > div, .shortGraph > div, .twowaySide > div, .graphToparea > div {
     width: 50%; }
+
+.shortGraph {
+  margin: 0 -40px; }
+
+.shortGraph > div {
+  margin: 0 40px; }
 
 .coinShow {
   padding-bottom: 35px; }
@@ -408,7 +414,11 @@ header {
   background: linear-gradient(45deg, #2151ed 0%, #7e84fb 100%);
   border-radius: 10px;
   box-shadow: 10px 10px 6px -1px rgba(0, 0, 0, 0.2);
-  padding: 35px; }
+  padding: 35px;
+  transform: skew(0);
+  transition: all 0.15s linear; }
+  .boxCoin:hover {
+    transform: skew(-7deg); }
   .boxCoin h3, .boxCoin span, .boxCoin strong, .boxCoin small {
     color: #FFF; }
   .boxCoin span {
@@ -454,3 +464,17 @@ header {
       transform: translateY(-50%);
       top: 50%;
       width: 9px; }
+
+.graphSide {
+  padding-right: 50px; }
+  .graphSide ul li {
+    background-color: transparent;
+    color: #9b9c9f;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 3px;
+    padding: 5px 10px;
+    transition: all 0.3s linear; }
+    .graphSide ul li:hover, .graphSide ul li.active {
+      background: #255af4;
+      color: #FFF; }

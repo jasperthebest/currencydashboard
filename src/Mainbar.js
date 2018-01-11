@@ -1,13 +1,119 @@
 import React from 'react';
 import Slider from 'react-slick';
 import CountUp from 'react-countup';
+import {Line} from 'react-chartjs-2';
+
+const data1 = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  datasets: [
+    {
+      label: 'Year',
+      fill: false,
+      lineTension: 0.05,
+      backgroundColor: 'rgba(75,192,192,0)',
+      borderColor: '#7ed393',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: '#7ed393',
+      pointBackgroundColor: '#7ed393',
+      pointBorderWidth: 1,
+      pointHoverRadius: 3,
+      pointHoverBackgroundColor: '#7ed393',
+      pointHoverBorderColor: '#7ed393',
+      pointHoverBorderWidth: 1,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: [65, 55, 79, 75, 73, 76, 69, 67, 61, 58, 65, 71]
+    }
+  ]
+};
+const data2 = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  datasets: [
+    {
+      label: 'Year',
+      fill: false,
+      lineTension: 0.05,
+      backgroundColor: 'rgba(75,192,192,0)',
+      borderColor: '#7ed393',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: '#7ed393',
+      pointBackgroundColor: '#7ed393',
+      pointBorderWidth: 1,
+      pointHoverRadius: 3,
+      pointHoverBackgroundColor: '#7ed393',
+      pointHoverBorderColor: '#7ed393',
+      pointHoverBorderWidth: 1,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: [65, 55, 79, 75, 73, 76, 69, 67, 61, 58, 65, 71]
+    }
+  ]
+};
+
+let annotation = {
+    annotations: [{
+        type: 'line',
+        mode: 'horizontal',
+        scaleID: 'x-axis-label',
+        borderColor: '#7ed393',
+        borderWidth: 2,
+        value:'March'
+    }],
+    drawTime: "afterDraw"
+};
+
+let options = {
+  maintainAspectRatio: true,
+  annotation: annotation,
+  responsive: true,
+  legend: {
+            display: false
+         },
+  title:{
+        display:false
+      },
+  tooltips: {
+  		enabled: false,
+        mode: 'null',
+        intersect: false
+      },
+  hover: {
+        mode: 'nearest',
+        intersect: false
+      },
+  scales: {
+      xAxes: [{
+              display: false,
+              gridLines: {
+                    display: false,
+                },
+              scaleLabel: {
+                  display: false,
+                  labelString: 'Month'
+              }
+          }],
+      yAxes: [{
+              display: false,
+              gridLines: {
+                drawBorder: false,
+              },
+              scaleLabel: {
+                  display: false,
+                  labelString: 'Value'
+              }
+          }]
+      }
+};
 
 class Mainbar extends React.Component {
 	constructor(props) {
 	    super(props);
-	    this.state = {
-	    	stateSlider: 1
-	    }
 	    this.next = this.next.bind(this);
 	    this.previous = this.previous.bind(this);
 	}
@@ -28,8 +134,7 @@ class Mainbar extends React.Component {
 	      slidesToShow: 2,
 	      slidesToScroll: 1
 	    };
-	    const dots = '<i className="fa fa-circle" aria-hidden="true"></i>';
-	    const carddata = [{name: "Bitg", cword: "MF1v", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitrex", cword: "GHL1", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitg", cword: "MF1v", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitrex", cword: "GHL1", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitg", cword: "MF1v", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitrex", cword: "GHL1", coin: "ETH/USD", user: "Brandom Lucas"}];
+	    const carddata = [{name: "Bitg", cword: "MF1v", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitrex", cword: "GHL1", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitg2", cword: "MF1v", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitrex3", cword: "GHL1", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitg4", cword: "MF1v", coin: "ETH/USD", user: "Brandom Lucas"}, {name: "Bitrex5", cword: "GHL1", coin: "ETH/USD", user: "Brandom Lucas"}];
 	    const cardhtml = carddata.map((card, index) => {
 	    	return (<div key={index}><div className="boxCoin">
 	        <h3>{card.name}</h3>
@@ -43,18 +148,20 @@ class Mainbar extends React.Component {
 	        </div>
 	        </div>
 	        </div></div>);
-	    });  
-		const operation = [{name: "Sell", icon: "arrow-up"}, {name: "Buy", icon: "arrow-down"}, { name: "Order", icon: "newspaper-o"}];
+	    });
 		const shortgra = [{name: "Your today revenue", price: 3766}, {name: "Current order volume", price: 7653}];
 		const shortgraphhtml = shortgra.map((sht, index) => {
 			return(<div key={index}>
 			<span className="headReven">{sht.name}</span>
 			<span className="priceUp"><small>+$</small><CountUp className="CountUp" start={0} end={sht.price} duration={3} redraw={true} /></span>
+			<Line data={data1} height={30} options={options} ref='chart' />
 			</div>);
 		});
+		const operation = [{name: "Sell", icon: "arrow-up"}, {name: "Buy", icon: "arrow-down"}, { name: "Order", icon: "newspaper-o"}];
 		const operationhtml = operation.map((opert, index) => {
 			return <li key={index}><a href="#"><i className={"fa fa-" + opert.icon} aria-hidden="true"></i><span>{opert.name}</span></a></li>;
 		});
+
 		return (
 			<div className="dashBoard">
 			<div>
